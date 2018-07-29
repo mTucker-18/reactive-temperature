@@ -26,3 +26,49 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* adding css variables for colors used: */
+:root{
+  --lavendar: #a7a5c6;
+  --off-white: #e6e8e6;
+  --green: #6e9075;
+  --brown: #a0a083;
+  --yellow-green: #e4e9b2;
+}
+
+/* styled whole page here, all according to BEM*/
+.Graph {
+  display: grid;
+  background-color: var(--off-white);
+  grid-template-rows: 20% 80%;
+  font-family: 'Lato', sans-serif;
+}
+
+.Graph-header {
+  grid-row: 1;
+  background-color: var(--lavendar);
+  border: 5px solid var(--brown);
+}
+
+.Graph-container {
+  grid-row: 2;
+  border: 5px solid var(--brown);
+  border-top: none;
+}
+
+/* flex inside of grid so I can add more bars later if needs be */
+.Graph-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 600px;
+}
+
+/* This formats each bar */
+.Bar {
+  color: var(--green);
+  background-color: var(--yellow-green);
+  border: 5px solid var(--brown);
+  border-bottom: none;
+  padding: 5px;
+}
