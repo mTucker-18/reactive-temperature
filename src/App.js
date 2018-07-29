@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,32 +6,49 @@ class App extends Component {
   //
   // }
 
-  onFetch() {
+  onFetch = () => {
     console.log('fetch calling');
-    fetch("data/data.json")
-    .then(response => response.json())
-    .then(data => {
-      console.log('got data:', data);
+    // fetch("data/data.json")
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log('got data:', data);
       // this.setState({
       //
       // });
-    }
+    // })
   }
 
-  onFetch();
+
+  highTemp = () => {
+    console.log("High temp function working");
+  //   let elem = document.getElementsByClassName("Bar");
+  //   elem[9].style.backgroundColor = "red";
+  //   elem[9].style.color = "black";
+  //   elem[9].style.height = "85%";
+  //   elem[9].style.transition = "3s";
+  }
+
+  lowTemp = () => {
+    console.log("Low temp function working");
+  //   let elem = document.getElementsByClassName("Bar");
+  //   elem[5].style.backgroundColor = "blue";
+  //   elem[5].style.color = "black";
+  //   elem[5].style.height = "53%";
+  //   elem[5].style.transition = "3s";
+  }
 
   render() {
     return (
-      <div class="Graph">
-        <div class="Graph-header">
+      <div className="Graph">
+        <div className="Graph-header">
   		     <h1>San Francisco Weather Over the Last 10 Years</h1>
         </div>
 
-        <div class="Graph-container">
+        <div className="Graph-container">
           <p>All records taken on July 15th</p>
-  				<button onCLick="highTemp()">Highest temp</button>
-  				<button onCLick="lowTemp()">Lowest temp</button>
-          <div class="Graph-bars">
+  				<button onClick={this.highTemp}>Highest temp</button>
+  				<button onClick={this.lowTemp}>Lowest temp</button>
+          <div className="Graph-bars">
           </div>
         </div>
       </div>
