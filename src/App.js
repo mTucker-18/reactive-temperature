@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
+import dataJson from './data/data.json';
 
 class App extends Component {
   // state= {
   //
   // }
+  
+  componentDidMount = () => {
+    this.onFetch();
+  }
 
   onFetch = () => {
     console.log('fetch calling');
-    // fetch("data/data.json")
-    // .then(response => response.json())
-    // .then(data => {
-    //   console.log('got data:', data);
-      // this.setState({
-      //
-      // });
-    // })
+    console.log(dataJson);
   }
 
 
@@ -38,6 +36,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="Graph">
         <div className="Graph-header">
