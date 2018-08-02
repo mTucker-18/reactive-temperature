@@ -3,9 +3,9 @@ import './App.css';
 import dataJson from './data/data.json';
 
 class App extends Component {
-  // state= {
-  //
-  // }
+  state = {
+    data: null,
+  }
 
   componentDidMount = () => {
     this.onFetch();
@@ -13,11 +13,13 @@ class App extends Component {
 
   onFetch = () => {
     console.log('fetch calling');
-    console.log(dataJson);
-    // .catch(error => {
-    //   console.log('====================');
-    //   console.error(error);
-    // });
+    let data = [];
+    for (let item of dataJson) {
+      data.push(item);
+    }
+    console.log(data);
+    this.setState({data: data});
+    console.log(this.state.data);
   }
 
 
