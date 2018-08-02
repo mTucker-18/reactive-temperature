@@ -6,7 +6,7 @@ class App extends Component {
   // state= {
   //
   // }
-  
+
   componentDidMount = () => {
     this.onFetch();
   }
@@ -14,6 +14,10 @@ class App extends Component {
   onFetch = () => {
     console.log('fetch calling');
     console.log(dataJson);
+    // .catch(error => {
+    //   console.log('====================');
+    //   console.error(error);
+    // });
   }
 
 
