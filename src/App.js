@@ -4,7 +4,7 @@ import dataJson from './data/data.json';
 
 class App extends Component {
   state = {
-    data: null,
+    data: [],
   }
 
   componentDidMount = () => {
@@ -12,14 +12,11 @@ class App extends Component {
   }
 
   onFetch = () => {
-    console.log('fetch calling');
     let data = [];
     for (let item of dataJson) {
       data.push(item);
     }
-    console.log(data);
     this.setState({data: data});
-    console.log(this.state.data);
   }
 
 
@@ -54,6 +51,13 @@ class App extends Component {
   				<button onClick={this.highTemp}>Highest temp</button>
   				<button onClick={this.lowTemp}>Lowest temp</button>
           <div className="Graph-bars">
+            {
+              this.state.data.map(datum => (
+                <div className="Bar" style={{height: datum.avg + "%"}}>
+                  July {datum.year}
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
