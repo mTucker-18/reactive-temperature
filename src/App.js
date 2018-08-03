@@ -11,6 +11,7 @@ class App extends Component {
     this.onFetch();
   }
 
+// get data from json and populate state
   onFetch = () => {
     let data = [];
     for (let item of dataJson) {
@@ -19,27 +20,25 @@ class App extends Component {
     this.setState({data: data});
   }
 
-
+// change style to show the year with the highets temp
   highTemp = () => {
-    console.log("High temp function working");
-  //   let elem = document.getElementsByClassName("Bar");
-  //   elem[9].style.backgroundColor = "red";
-  //   elem[9].style.color = "black";
-  //   elem[9].style.height = "85%";
-  //   elem[9].style.transition = "3s";
+    let elem = document.getElementsByClassName("Bar");
+    elem[9].style.backgroundColor = "red";
+    elem[9].style.color = "black";
+    elem[9].style.height = "85%";
+    elem[9].style.transition = "3s";
   }
 
+// change style to show the year with the lowest temp
   lowTemp = () => {
-    console.log("Low temp function working");
-  //   let elem = document.getElementsByClassName("Bar");
-  //   elem[5].style.backgroundColor = "blue";
-  //   elem[5].style.color = "black";
-  //   elem[5].style.height = "53%";
-  //   elem[5].style.transition = "3s";
+    let elem = document.getElementsByClassName("Bar");
+    elem[5].style.backgroundColor = "blue";
+    elem[5].style.color = "black";
+    elem[5].style.height = "53%";
+    elem[5].style.transition = "3s";
   }
 
   render() {
-
     return (
       <div className="Graph">
         <div className="Graph-header">
